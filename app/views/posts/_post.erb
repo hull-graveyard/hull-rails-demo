@@ -1,0 +1,5 @@
+<li>
+  <h4>#<%= post.id %> <%= post.title %> <div data-hull-widget="like_button@hull" data-hull-uid="<%= post.entity_uid %>"></div></h4>
+  <p><small>from <%= post.user.email %></small>, on <%= post.created_at %></p>
+  <p><%= post.content %></p>
+</li>

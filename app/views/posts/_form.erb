@@ -1,0 +1,17 @@
+<div class="well">
+<%= form_for Post.new, class: "form-horizontal" do |f| %>
+  <div class="control-group">
+    <%= f.label :title, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title %><br />
+    </div> 
+  </div>
+  <div class="control-group">
+    <%= f.label :content, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :content %><br />
+    </div> 
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+</div>

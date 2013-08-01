@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HullRailsDemo</title>
+  <%= stylesheet_link_tag "http://hullstrap.s3.amazonaws.com/stylesheets/hullstrap.css" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%=raw hull_init %>
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="user_nav">
+        <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>.
+            <%= link_to 'Sign out', destroy_user_session_path %>
+        <% else %>
+            <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+        <% end %>
+    </div>
+    <%= yield %>
+  </div>
+  <%= render partial: 'templates/activity' %>
+</body>
+</html>
